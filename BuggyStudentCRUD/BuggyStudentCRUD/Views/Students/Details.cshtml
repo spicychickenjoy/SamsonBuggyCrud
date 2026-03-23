@@ -1,0 +1,48 @@
+@model BuggyStudentCRUD.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2><i class="fas fa-user"></i> Student Details</h2>
+<hr />
+
+<div class="card shadow-sm" style="max-width: 600px;">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.FirstName)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.LastName)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.LastName)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.FirstName)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Course)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Course)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.YearLevel)</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.YearLevel)</dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.GPA)</dt>
+            <dd class="col-sm-8">
+                <span class="badge @(Model.GPA >= 3.5 ? "bg-success" : Model.GPA >= 2.5 ? "bg-warning text-dark" : "bg-danger")">
+                    @Model.GPA.ToString("F2")
+                </span>
+            </dd>
+
+            <dt class="col-sm-4">@Html.DisplayNameFor(model => model.EnrollmentDate)</dt>
+            <dd class="col-sm-8">@Model.EnrollmentDate.ToString("MMMM dd, yyyy")</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a asp-action="Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>

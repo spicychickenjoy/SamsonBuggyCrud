@@ -1,0 +1,41 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    font-size: 0.85rem;
+}
+
+.table th a {
+    text-decoration: none;
+}
+
+.table th a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+.btn-sm {
+    margin: 0 2px;
+}
